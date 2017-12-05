@@ -7,8 +7,8 @@
     "lib": ["dom", "dom.iterable", "es2015"],
     "baseUrl": "src",
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   }
