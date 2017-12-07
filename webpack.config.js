@@ -42,11 +42,15 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader", use: "css-loader!sass-loader",
                 })
+            },
+            {
+                test: /\.html$/,
+                use: 'raw-loader'
             }
         ]
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: [".html", ".tsx", ".ts", ".js"],
         modules: [
             config.srcPath,
             'node_modules'

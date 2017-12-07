@@ -1,26 +1,27 @@
+import { container } from 'inversify.config';
 import { injectable } from 'inversify';
 import { Panel } from 'ui/Panel';
-import { ImageLoader } from 'services/ImageLoader';
+import { Image } from './ui/Image';
 
 @injectable()
 export class Application {
     private readonly panel: Panel;
-    private readonly imageLoader: ImageLoader;
+    private readonly sourceProfile: Image;
+    private readonly targetProfile: Image;
 
     constructor(
-        panel: Panel,
-        imageLoader: ImageLoader
+        panel: Panel
     ) {
         this.panel = panel;
-        this.imageLoader = imageLoader;
+        this.sourceProfile = new Image("Source image");
+        this.targetProfile = new Image("Target image");
     }
 
     public async init() {
-        this.panel.addListener("image-loaded", this.loadImage);
+        this.panel.addListener('image-loaded', this.loadImage);
     }
 
     private loadImage = async (url: string) => {
-        let image = await this.imageLoader.loadImage(url);
-        console.warn(image);
+        this.sourceProfile.setImage(url);
     }
 }
