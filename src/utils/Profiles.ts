@@ -41,11 +41,11 @@ export class Profile {
     }
 
     // from profile to profile (przyjmuje dwa profile, obrazek, dla kazdego piksela bierze kolor uzywa toXYZ,a potem toRGB)
-    
+
     toXYZ(RGB: RGB): XYZ {
-        let r = math.pow(RGB.R / 255, this.gamma) as number;
-        let g = math.pow(RGB.G / 255, this.gamma) as number;
-        let b = math.pow(RGB.B / 255, this.gamma) as number;
+        let r = math.pow(RGB.R / 255, 1 / this.gamma) as number;
+        let g = math.pow(RGB.G / 255, 1 / this.gamma) as number;
+        let b = math.pow(RGB.B / 255, 1 / this.gamma) as number;
 
         let XYZ = math.multiply(this.toXYZMatrix, [r, g, b]);
 
