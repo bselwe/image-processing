@@ -8,8 +8,15 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <div class="application">
+        <div id="application">
             <h1>Image processing - color sources</h1>
+            <div class="button">
+                <label for="image-load">Load</label>
+                <input id="image-load" type="file" accept="image/*" style="display: none;" />
+            </div>
+            <button id="image-generate" class="button">Generate</button>
+            <button id="image-save" class="button">Save</button>
+            <div id="images" />
         </div>
         <script type="text/javascript" src="bundle.js"></script>
     </body>
