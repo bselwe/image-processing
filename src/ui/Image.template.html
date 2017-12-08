@@ -2,9 +2,20 @@
     <h2 class="image-name"></h2>
     <table>
         <tr>
+            <td>Profil</td>
+            <td>
+                <select class="profile">
+                    <option value="sRGB">SRGB</option>
+                    <option value="wideGamut">Wide Gamut</option>
+                    <option value="appleRGB">Apple RGB</option>
+                </select>
+            </td>
             <td></td>
+        </tr>
+        <tr>
             <td>Gamma</td>
-            <td><input type="text" /></td>
+            <td><input type="number" class="gamma" /></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -13,24 +24,25 @@
         </tr>
         <tr>
             <td>White</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td><input type="number" class="white-x" /></td>
+            <td><input type="number" class="white-y" /></td>
         </tr>
         <tr>
             <td>R</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td><input type="number" class="red-x" /></td>
+            <td><input type="number" class="red-y" /></td>
         </tr>
         <tr>
             <td>G</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td><input type="number" class="green-x" /></td>
+            <td><input type="number" class="green-y" /></td>
         </tr>
         <tr>
             <td>B</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td><input type="number" class="blue-x" /></td>
+            <td><input type="number" class="blue-y" /></td>
         </tr>
     </table>
-    <img width="600" class="image" />
+    <img class="image" style="display: none;" />
+    <canvas class="canvas" />
 </div>

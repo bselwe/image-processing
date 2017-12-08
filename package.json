@@ -35,8 +35,12 @@
     "watch:prod": "webpack -w -p"
   },
   "dependencies": {
+    "@types/file-saver": "^1.3.0",
+    "@types/mathjs": "^0.0.35",
     "eventemitter3": "^3.0.0",
+    "file-saver": "^1.3.3",
     "inversify": "^4.5.2",
+    "mathjs": "^3.17.0",
     "normalize.css": "^7.0.0",
     "reflect-metadata": "^0.1.10"
   }
