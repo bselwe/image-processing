@@ -19,10 +19,10 @@ module.exports = {
     devServer: {
         contentBase: config.distPath
     },
-    devtool: "source-map",
+    devtool: "inline-source-map",
     plugins: [
         new CopyPlugin([{ from: 'public' }]),
-        new ExtractTextPlugin({ filename: "styles.css", allChunks: true })
+        new ExtractTextPlugin("styles.css")
     ],
     module: {
         rules: [
@@ -34,14 +34,17 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader", use: "css-loader",
+                    fallback: 'style-loader',
+                    use: 'css-loader'
                 })
             },
             {
-                test: /\.(sass|scss)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader", use: "css-loader!sass-loader",
-                })
+                test: /\.sass$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.html$/,
